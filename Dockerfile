@@ -46,7 +46,7 @@ RUN --mount=type=cache,target=/cache --mount=type=cache,target=/root/.cache/pip 
 RUN --mount=type=cache,target=/root/.cache/pip \
     git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git && \
     cd stable-diffusion-webui && \
-    git reset --hard 68f336bd994bed5442ad95bad6b6ad5564a5409a && \
+    git reset --hard 394ffa7b0a7fff3ec484bcd084e673a8b301ccc8 && \
     pip install -r requirements_versions.txt
 
 COPY --from=download /repositories/ ${ROOT}/repositories/
@@ -63,7 +63,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     pip install --upgrade -r /requirements.txt --no-cache-dir && \
     rm /requirements.txt
 
-ARG SHA=68f336bd994bed5442ad95bad6b6ad5564a5409a
+ARG SHA=394ffa7b0a7fff3ec484bcd084e673a8b301ccc8
 RUN --mount=type=cache,target=/root/.cache/pip \
     cd stable-diffusion-webui && \
     git fetch && \
